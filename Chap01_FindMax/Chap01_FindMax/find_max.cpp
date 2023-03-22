@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <stdio.h>
 
 int findArrayMax(int score[], int n) //자료구조 : 배열 array
 {
@@ -11,7 +11,7 @@ int findArrayMax(int score[], int n) //자료구조 : 배열 array
 	return tmp;
 }
 
-void main()
+int main()
 {
 	int score[5] = { 12, 123, 12, 54, 1, };
 	int out;
