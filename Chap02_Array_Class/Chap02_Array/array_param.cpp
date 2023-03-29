@@ -1,0 +1,22 @@
+#include <cstdio>
+#define MAX_SIZE 10
+
+//배열을 파라미터로 받는 함수
+void sub(int x, int arr[])
+{
+	x = 10;
+	arr[0] = 10; //arr배열 1번쨰에 10을 저장
+}
+
+int main()
+{
+	int var;
+	int list[MAX_SIZE];
+
+	var = 0;	//그냥 변수는 바뀌지 않는다.
+	list[0] = 0;	// 배열은 바뀐다.
+	sub(var, list);
+	printf("var=%d, list[0]=%d\n", var, list[0]);
+
+	return 0;
+}
