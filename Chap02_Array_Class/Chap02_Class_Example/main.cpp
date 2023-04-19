@@ -1,5 +1,6 @@
 #include "Polynomial.h"
 #include "Birthday.h"
+#include "Music.h"
 
 void swap(int& x, int& y)
 {
@@ -29,11 +30,33 @@ int main() {
 		printf("이름은 : %s, %d월 %d일 생입니다. \n", eei[2].name, eei[2].bDay.month, eei[2].bDay.date);
 	*/
 	// 72p. 참조형 또는 레퍼런스형
+
+	/*
 	int a = 1, b = 2;
 	printf("a = %d, b = %d\n", a, b);
 	swap(a, b);
 	printf("swap 호출 후 , a = %d, b = %d", a, b);
 	return 0;
+	*/
 
+	MusicStreamingService service;
+	service.addMusic("Butter", "BTS", "Butter", 2021);
+	service.addMusic("Dynamite", "BTS", "BE", 2020);
+	service.addMusic("Ditto", "NewJeans", "Ditto", 2023);
+
+	string title, artist;
+	cout << "Enter the title of the music: ";
+	cin >> title;
+	cout << "Enter the artist of the music: ";
+	cin >> artist;
+
+	Music foundMusic = service.findMusic(title, artist);
+	if (foundMusic.getTitle() != "") {
+		cout << "Found music: " << foundMusic.getTitle() << " by " << foundMusic.getArtist()
+			<< " on " << foundMusic.getAlbum() << " (" << foundMusic.getReleaseYear() << ")" << endl;
+	}
+	else {
+		cout << "Music not found." << endl;
+	}
 
 }
